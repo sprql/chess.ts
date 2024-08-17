@@ -1,4 +1,6 @@
-.github/
-coverage/
-__tests__/
-debug.sh
+tests/
+node_modules/
+.git
+.gitignore
+bun.lockb
+biome.json

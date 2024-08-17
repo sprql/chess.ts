@@ -1,35 +1,38 @@
 {
-  "name": "chess.js",
-  "version": "1.0.0-beta.8",
-  "license": "BSD-2-Clause",
-  "main": "dist/cjs/chess.js",
-  "module": "dist/esm/chess.js",
-  "types": "dist/types/chess.d.ts",
-  "homepage": "https://github.com/jhlywa/chess.js",
-  "author": "Jeff Hlywa <jhlywa@gmail.com>",
+  "name": "@sprql/chess.ts",
+  "version": "0.0.1",
+  "description": "Chess engine",
+  "main": "src/chess.ts",
+  "types": "src/chess.ts",
+  "files": [
+    "src/chess.ts"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "^1.1.6",
+    "typescript": "^5.5.4"
+  },
   "scripts": {
-    "prepare": "npm run build",
-    "build": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
-    "check": "npm run format:check && npm run lint && npm run test && npm run build",
-    "clean": "rm -rf ./dist",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint src/ --ext .ts",
-    "test": "jest"
+    "build": "bun build ./src/chess.ts --outdir ./dist",
+    "check": "biome check --apply .",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "test": "bun test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhlywa/chess.js"
+    "url": "git+https://github.com/sprql/chess.ts.git"
   },
-  "devDependencies": {
-    "@types/jest": "^27.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "eslint": "^8.12.0",
-    "jest": "^27.0.6",
-    "jest-extended": "^2.0.0",
-    "prettier": "^3.1.0",
-    "ts-jest": "^27.0.4",
-    "typescript": "^4.6.3"
+  "keywords": [
+    "chess"
+  ],
+  "author": "Alexander Obukhov",
+  "homepage": "https://github.com/sprql/chess.ts",
+  "license": "BSD-2-Clause",
+  "directories": {
+    "test": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/sprql/chess.ts/issues"
   }
 }
